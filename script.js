@@ -1,5 +1,8 @@
 const url = "http://pb-api.herokuapp.com/bars";
 fetch(url).then(a => a.json()).then(function(a) {
+	var x = document.getElementsByClassName("alert");
+    x[0].style.display = "none";
+    
     var b = document.getElementById("pg");
     for (i = 0; i < a.bars.length; i++) {
         var c = "progress" + i,
@@ -13,6 +16,11 @@ fetch(url).then(a => a.json()).then(function(a) {
         });
 
         e.set(a.bars[i]);
+    }
+    for (i = i; i < 6; i++)		
+    {	
+    	var y = document.getElementsByClassName("card"+i);		
+     	y[0].style.display = "none";		
     }
     return a
 }).then(function(a) {
@@ -40,5 +48,8 @@ function process(a) {
             value: 0
         });
         g.set(parseInt(d) + parseInt(a))
+    } else {
+    	var x = document.getElementsByClassName("alert");
+        x[0].style.display = "block";
     }
 }
