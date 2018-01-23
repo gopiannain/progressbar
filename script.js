@@ -14,11 +14,6 @@ fetch(url).then(a => a.json()).then(function(a) {
 
         e.set(a.bars[i]);
     }
-    for (i = i+1; i < 7; i++)
-    {
-    	var x = "progress" + i;
-    	x.style.display = "none";
-    }
     return a
 }).then(function(a) {
     var b = document.getElementById("pgbuttons");
